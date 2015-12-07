@@ -4,7 +4,7 @@
          rackunit/text-ui
          "../../../src/assembling/helpers.rkt")
 
-(define file-tests
+(define tests
   (test-suite
     "Tests for assembling/helpers.rkt"
 
@@ -65,5 +65,4 @@
     ; [pad-word (-> bits? exact-nonnegative-integer? bits?)]
    ))
 
-
-(run-tests file-tests)
+(run-tests tests)
