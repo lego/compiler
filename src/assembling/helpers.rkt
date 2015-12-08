@@ -20,7 +20,7 @@
     [bits-xnor (bits? bits? . -> . bits?)]
     [shift (bits? exact-nonnegative-integer? . -> . bits?)]
     [pad-zero (bits? exact-nonnegative-integer? . -> . bits?)]
-    [pad-word (bits? exact-nonnegative-integer? . -> . bits?)])
+    [pad-word (->* (bits?) (exact-nonnegative-integer?) bits?)])
   b-one
   b-zero)
 
