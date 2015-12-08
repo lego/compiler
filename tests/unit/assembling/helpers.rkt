@@ -1,5 +1,7 @@
 #lang racket
 
+(provide tests)
+
 (require rackunit
          rackunit/text-ui
          "../../../src/assembling/helpers.rkt")
@@ -65,4 +67,5 @@
     ; [pad-word (-> bits? exact-nonnegative-integer? bits?)]
    ))
 
-(run-tests tests)
+(module+ main
+  (run-tests tests))

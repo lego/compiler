@@ -1,24 +1,26 @@
 #lang racket
 
+(require (only-in "../helpers.rkt" chartest))
+
 (provide
   (contract-out
-    [b-one? (-> bit? boolean?)]
-    [b-zero? (-> bit? boolean?)]
-    [bit? (-> any/c boolean?)]
-    [bit-not (-> bit? bit?)]
-    [bit-and (-> bit? bit? bit?)]
-    [bit-or (-> bit? bit? bit?)]
-    [bit-xor (-> bit? bit? bit?)]
-    [bits? (-> any/c boolean?)]
-    [string->bits (-> string? bits?)]
-    [bits-not (-> bits? bits?)]
-    [bits-and (-> bits? bits? bits?)]
-    [bits-or (-> bits? bits? bits?)]
-    [bits-xor (-> bits? bits? bits?)]
-    [bits-xnor (-> bits? bits? bits?)]
-    [shift (-> bits? exact-nonnegative-integer? bits?)]
-    [pad-zero (-> bits? exact-nonnegative-integer? bits?)]
-    [pad-word (-> bits? exact-nonnegative-integer? bits?)])
+    [b-one? (bit? . -> . boolean?)]
+    [b-zero? (bit? . -> . boolean?)]
+    [bit? (any/c . -> . boolean?)]
+    [bit-not (bit? . -> . bit?)]
+    [bit-and (bit? bit? . -> . bit?)]
+    [bit-or (bit? bit? . -> . bit?)]
+    [bit-xor (bit? bit? . -> . bit?)]
+    [bits? (any/c . -> . boolean?)]
+    [string->bits (string? . -> . bits?)]
+    [bits-not (bits? . -> . bits?)]
+    [bits-and (bits? bits? . -> . bits?)]
+    [bits-or (bits? bits? . -> . bits?)]
+    [bits-xor (bits? bits? . -> . bits?)]
+    [bits-xnor (bits? bits? . -> . bits?)]
+    [shift (bits? exact-nonnegative-integer? . -> . bits?)]
+    [pad-zero (bits? exact-nonnegative-integer? . -> . bits?)]
+    [pad-word (bits? exact-nonnegative-integer? . -> . bits?)])
   b-one
   b-zero)
 
@@ -30,18 +32,15 @@
 ;; BIT OPERATORS
 ;;;;;;
 
-(define (char-test testing)
-  (lambda (char-input) (char=? testing char-input)))
-
 (define (bit? v)
   (and (char? v)
        (or (b-one? v) (b-zero? v))))
 
 (define (b-one? bit)
-  ((char-test b-one) bit))
+  ((chartest b-one) bit))
 
 (define (b-zero? bit)
-  ((char-test b-zero) bit))
+  ((chartest b-zero) bit))
 
 (define (bit-and bit mbit)
   (if (and (b-one? bit) (b-one? mbit)) b-one b-zero))
@@ -65,7 +64,7 @@
 
 ; NOTE: ignores spaces, useful for human-readable padded bit strings
 (define (string->bits str)
-  (define converted-string (filter (compose not (char-test #\space)) (string->list str)))
+  (define converted-string (filter (compose not (chartest #\space)) (string->list str)))
   (unless (bits? converted-string)
     (raise-argument-error 'string->bits "string contains non-bits" str))
   converted-string)

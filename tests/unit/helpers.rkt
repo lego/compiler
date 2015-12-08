@@ -1,5 +1,7 @@
 #lang racket
 
+(provide tests)
+
 (require rackunit
          rackunit/text-ui
          "../../src/helpers.rkt")
@@ -48,4 +50,5 @@
 
    ))
 
-(run-tests tests)
+(module+ main
+  (run-tests tests))
