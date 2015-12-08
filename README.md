@@ -9,6 +9,25 @@ This compiler is an modular compiler for C-style languages. It is modularized in
 
 The ultimate goal for this compiler is to extensible compiler solution with a complete test suite. The ambition is to create a full compiler and then a simple MIPS emulator, and a suite of tools in order to thoroughly test the validity of the compiler. Creating the compiler in a modular way will provide an easy entrance to implementing other features or compile targets, while retaining the same validity for shared code.
 
+Usage
+======
+
+MIPS Assembly Scanner
+-------
+Tokenizes the MIPS assembly into easy to consume lexical tokens.
+```
+racket src/assembling/mips/scanner-mips.rkt tests/functional/mips/tokenizer/basic-word.in
+```
+MIPS Assembler
+-------
+Assembles MIPS into machine code.
+```
+racket src/assembling/mips/assember-mips.rkt tests/functional/mips/tokenizer/basic-word.in
+```
+For readable binary output use the _pretty output_ argument option, `-p`. For debugging information, use the _verbose_ argument options, `-v`.
+
+
+
 License
 -------
 Copyright Joey Pereira (xLegoz) and all contributors.
