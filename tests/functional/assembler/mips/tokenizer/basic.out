@@ -1,0 +1,4 @@
+DOTWORD .word 0 0
+INT 1 1 6
+DOTWORD .word 1 0
+INT 2 1 6
