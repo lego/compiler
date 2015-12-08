@@ -1,6 +1,6 @@
 C-style language compiler suite
 ==================================
-This compiler is an modular compiler for C-style languages. It is modularized into the following sections
+This compiler is a modular compiler for C-style languages. It is modularized into the following sections
 - **Tokenizer.** Performs correct token syntax checking.
 - **Parse tree generator.** Performs complete syntax checking.
 - **Semantic checker.** Performs semantic checking on the parse tree, including types, scope, declarations.
