@@ -66,6 +66,9 @@
     (transition 'start char-alphabetic? 'id)
     (transition 'id char-alphabetic? 'id)
     (transition 'id char-numeric? 'id)
+    ; specifically for floating point registers
+    (transition 'id (chartest #\.) 'id)
+
     ; label definition
     (transition 'id (chartest #\:) 'label)
 
