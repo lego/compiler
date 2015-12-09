@@ -3,12 +3,12 @@
 (provide (contract-out
   [nth (exact-nonnegative-integer? (listof any/c) . -> . any/c)]
   [chartest (char? . -> . (char? . -> . boolean?))]
-  [scan-input (->* (port?) (string?) string?)]
-  [fatal (->* (string?) #:rest (listof any/c) void?)]
-  [warning (->* (string?) #:rest (listof any/c) void?)]
-  [verbose (->* (string?) #:rest (listof any/c) void?)]
-  [logger (->* (log-level? string?) #:rest (listof any/c) void?)]
-  [flogger (->* (port? log-level? string?) #:rest (listof any/c) void?)]
+  [scan-input ((port?) (string?) . ->* . string?)]
+  [fatal ((string?) #:rest (listof any/c) . ->* . void?)]
+  [warning ((string?) #:rest (listof any/c) . ->* . void?)]
+  [verbose ((string?) #:rest (listof any/c) . ->* . void?)]
+  [logger ((log-level? string?) #:rest (listof any/c) . ->* . void?)]
+  [flogger ((port? log-level? string?) #:rest (listof any/c) . ->* . void?)]
   [set-logger-level! (log-level? . -> . void?)]
   [get-logger-level (-> log-level?)])
   fatal-logging

@@ -17,10 +17,9 @@
     [bits-and (bits? bits? . -> . bits?)]
     [bits-or (bits? bits? . -> . bits?)]
     [bits-xor (bits? bits? . -> . bits?)]
-    [bits-xnor (bits? bits? . -> . bits?)]
     [shift (bits? exact-nonnegative-integer? . -> . bits?)]
     [pad-zero (bits? exact-nonnegative-integer? . -> . bits?)]
-    [pad-word (->* (bits?) (exact-nonnegative-integer?) bits?)])
+    [pad-word ((bits?) (exact-nonnegative-integer?) . ->* . bits?)])
   b-one
   b-zero)
 
@@ -95,14 +94,6 @@
     (raise-argument-error 'bits-xor "equal size lists" bits mbits))
   (map bit-xor bits mbits))
 
-;xnor-bits: Bits Bits -> Bits => ALL SAME SIZE
-; xnors the two bit lists together
-(define (bits-xnor bits mbits)
-  (unless (= (length bits) (length mbits))
-    (raise-argument-error 'bits-xnor "equal size lists" bits mbits))
-  (bits-not (bits-xor bits mbits)))
-
-
 ;shift: Bits Int -> Bits (output Bits size is |lst| + amount)
 ;purpose: shifts the bits of lst left by amount of bits, padding the right with 0's
 (define (shift lst amount)
@@ -111,11 +102,7 @@
 ;pad-zero: Bits Int -> Bits
 ;purpose: pads bits by c zeros on the left, making the list longer
 (define (pad-zero lst c)
-  (cond
-    [(> c 0)
-      (pad-zero (cons b-zero lst) (sub1 c))]
-    [else
-      lst]))
+  (append (build-list c (lambda (_) #\0)) lst))
 
 ;pad-word: Bits -> Bits (output Bits size is len)
 ;purpose: pads bits to the size of a word (32 bits)
