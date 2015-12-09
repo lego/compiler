@@ -24,13 +24,16 @@
 
 ; short hand versions
 (define (fatal form . v)
-  (logger fatal-logging form v))
+  (define log-level fatal-logging)
+  (apply logger (append (list log-level form) v)))
 (define (warning form . v)
-  (logger warning-logging form v))
+  (define log-level warning-logging)
+  (apply logger (append (list log-level form) v)))
 (define (verbose form . v)
-  (logger verbose-logging form v))
+  (define log-level verbose-logging)
+  (apply logger (append (list log-level form) v)))
 (define (logger log-level form . v)
-  (flogger (current-error-port) log-level form v))
+  (apply flogger (append (list (current-error-port) log-level form) v)))
 
 ; complete logger to output-port
 (define (flogger output-port log-level form . v)
