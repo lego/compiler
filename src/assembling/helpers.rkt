@@ -113,7 +113,7 @@
 (define (pad-zero lst c)
   (cond
     [(> c 0)
-      (pad-zero (cons b-one lst) (sub1 c))]
+      (pad-zero (cons b-zero lst) (sub1 c))]
     [else
       lst]))
 
