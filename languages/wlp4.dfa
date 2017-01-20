@@ -1,0 +1,291 @@
+80
+[
+]
+(
+)
+{
+}
+=
+!
+<
+>
++
+*
+-
+/
+%
+&
+;
+,
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+q
+w
+e
+r
+t
+y
+u
+i
+o
+p
+a
+s
+d
+f
+g
+h
+j
+k
+l
+z
+x
+c
+v
+b
+n
+m
+Q
+W
+E
+R
+T
+Y
+U
+I
+O
+P
+A
+S
+D
+F
+G
+H
+J
+K
+L
+Z
+X
+C
+V
+B
+N
+M
+26
+start
+=
+==
+!=
+!
+>
+<
+>=
+<=
++
+-
+*
+/
+%
+&
+;
+,
+[
+]
+(
+)
+{
+}
+zero
+num
+id
+start
+24
+=
+==
+!=
+>
+<
+>=
+<=
++
+-
+*
+/
+%
+&
+;
+,
+[
+]
+(
+)
+{
+}
+zero
+num
+id
+156
+start = =
+start ! !
+start > >
+start < <
+start + +
+start - -
+start * *
+start & &
+start / /
+start % %
+= = ==
+! = !=
+> = >=
+< = <=
+start ; ;
+start , ,
+start [ [
+start ] ]
+start ( (
+start ) )
+start { {
+start } }
+start 0 zero
+start 1 num
+start 2 num
+start 3 num
+start 4 num
+start 5 num
+start 6 num
+start 7 num
+start 8 num
+start 9 num
+num 0 num
+num 1 num
+num 2 num
+num 3 num
+num 4 num
+num 5 num
+num 6 num
+num 7 num
+num 8 num
+num 9 num
+start q id
+start w id
+start e id
+start r id
+start t id
+start y id
+start u id
+start i id
+start o id
+start p id
+start a id
+start s id
+start d id
+start f id
+start g id
+start h id
+start j id
+start k id
+start l id
+start z id
+start x id
+start c id
+start v id
+start b id
+start n id
+start m id
+start Q id
+start W id
+start E id
+start R id
+start T id
+start Y id
+start U id
+start I id
+start O id
+start P id
+start A id
+start S id
+start D id
+start F id
+start G id
+start H id
+start J id
+start K id
+start L id
+start Z id
+start X id
+start C id
+start V id
+start B id
+start N id
+start M id
+id 0 id
+id 1 id
+id 2 id
+id 3 id
+id 4 id
+id 5 id
+id 6 id
+id 7 id
+id 8 id
+id 9 id
+id q id
+id w id
+id e id
+id r id
+id t id
+id y id
+id u id
+id i id
+id o id
+id p id
+id a id
+id s id
+id d id
+id f id
+id g id
+id h id
+id j id
+id k id
+id l id
+id z id
+id x id
+id c id
+id v id
+id b id
+id n id
+id m id
+id Q id
+id W id
+id E id
+id R id
+id T id
+id Y id
+id U id
+id I id
+id O id
+id P id
+id A id
+id S id
+id D id
+id F id
+id G id
+id H id
+id J id
+id K id
+id L id
+id Z id
+id X id
+id C id
+id V id
+id B id
+id N id
+id M id
